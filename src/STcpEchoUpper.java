@@ -3,7 +3,6 @@ import java.io.*;
 import java.net.*;
 
 public class STcpEchoUpper {
-
     public static void main(String[] args) throws IOException {
         String pagina="<!DOCTYPE html>\n" +
                 "<html>\n" +
