@@ -8,7 +8,7 @@ public class STcpEchoUpper {
         String pagina="<!DOCTYPE html>\n" +
                 "<html>\n" +
                 "<head>\n" +
-                "  <title>Hi there</title>\n" +
+                "  <title>Hi there</title>\n" + //banana
                 "</head>\n" +
                 "<body>\n" +
                 "  This is a page \n" +
