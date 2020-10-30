@@ -5,11 +5,10 @@ import java.net.*;
 public class STcpEchoUpper {
 
     public static void main(String[] args) throws IOException {
-        int udd=0;
         String pagina="<!DOCTYPE html>\n" +
                 "<html>\n" +
                 "<head>\n" +
-                "  <title>Hi there</title>\n" + //banana
+                "  <title>Hi there</title>\n" +
                 "</head>\n" +
                 "<body>\n" +
                 "  This is a page \n" +
