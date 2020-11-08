@@ -101,10 +101,10 @@ public class STcpEchoUpper {
     }
 
     public static void invioFileMultimediali(byte[] immagine, OutputStream ops) throws IOException {
-        ops.write("HTTP/1.1 200 OK".getBytes());
-        ops.write("Connection: keep-alive".getBytes());
-        ops.write(("Content-Length: "+immagine.length).getBytes());
-        ops.write("".getBytes());
+        ops.write("HTTP/1.1 200 OK\n".getBytes());
+        ops.write("Connection: keep-alive\n".getBytes());
+        ops.write(("Content-Length: "+immagine.length+"\n").getBytes());
+        ops.write("\n".getBytes());
         ops.write(immagine);
     }
 }
