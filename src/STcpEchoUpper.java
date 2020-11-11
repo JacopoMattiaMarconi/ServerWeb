@@ -33,7 +33,7 @@ public class STcpEchoUpper {
                 }
                 String estensione = "";
                 riconoscimento = riconoscimento.split(" ")[1].substring(1); //prende la riga, divide per spazi
-                //e toglie il "/" iniziale
+                                                                               //e toglie il "/" iniziale
                 estensione = riconoscimento.split("\\.")[1]; //prende l'estensione del file
 
                 byte[] file = new byte[0];
@@ -62,17 +62,18 @@ public class STcpEchoUpper {
                 S.close();
             }
             catch (Exception e){
-                System.out.println(e);
+                System.out.println("ERROR 404");
             }
         }
     }
 
     public static void invioFileMultimediali(byte[] file, OutputStream ops, String estensione) throws IOException {
-        ops.write("HTTP/1.1 200 OK\n".getBytes());
-        ops.write("Connection: keep-alive\n".getBytes());
-        ops.write(("Content Type: "+estensione+"\n").getBytes());
-        ops.write(("Content length: "+file.length+"\n").getBytes());
-        ops.write("\n".getBytes());
+        byte[] header=("HTTP/1.1 200 OK\n"+
+                "Keep-Alive: timeout=5, max=100\n"+
+                "Connection: Keep-Alive\n"+
+                "Content length: "+file.length+"\n"+
+                "\n").getBytes();
+        ops.write(header);
         ops.write(file);
     }
 }
