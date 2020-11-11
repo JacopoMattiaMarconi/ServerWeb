@@ -1,6 +1,8 @@
 
 import java.io.*;
 import java.net.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class STcpEchoUpper {
     public static void main(String[] args) throws IOException {
@@ -46,18 +48,8 @@ public class STcpEchoUpper {
                     }
                     br2.close();
                 }
-                else{
-                    BufferedReader br2 = new BufferedReader(new FileReader(riconoscimento));
-                    String line;
-                    line = br2.readLine();
-                    while (line != null) {
-                        pagina.append(line);
-                        line = br2.readLine();
-                    }
-                    String s=pagina.toString();
-                    immagine=new byte[s.length()];
-                    immagine=s.getBytes();
-                    br2.close();
+                else {
+                    immagine = Files.readAllBytes(Paths.get(riconoscimento));
                 }
             }
             catch (FileNotFoundException e){
